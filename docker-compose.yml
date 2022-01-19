@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  moduleleve:
+    build:
+      context: .
+    init: true
+    network_mode: host
+    volumes:
+      - "/var/run/docker:/var/run/docker"
+      - "/var/run/docker.pid:/var/run/docker.pid"
+      - "/var/run/docker.sock:/var/run/docker.sock"
