@@ -1,11 +1,12 @@
 version: "3.7"
 services:
-  moduleleve:
+  evaluation_bridge:
     build:
       context: .
     init: true
-    network_mode: host
+    container_name: evaluation_bridge
     volumes:
       - "/var/run/docker:/var/run/docker"
       - "/var/run/docker.pid:/var/run/docker.pid"
       - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./hidden_service:/var/lib/tor/hidden_service"
